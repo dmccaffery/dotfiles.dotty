@@ -1,0 +1,11 @@
+# Worktree signing config for profile personal, rendered by
+# `dotty init` and included last by the shared git config: inside agent
+# worktrees (.worktrees) commit/tag signing turns off, since sandboxed
+# agents cannot reach the security key.
+#
+# git matches gitdir against the RESOLVED git directory — for a linked
+# worktree that is <repo>/.git/worktrees/<name>, never the checkout path —
+# so linked worktrees match the blanket pattern below wherever they live,
+# and re-signing happens afterwards via `dotty git resign`.
+[includeIf "gitdir:**/.git/worktrees/**"]
+	path = ~/.config/git/agent.gitconfig

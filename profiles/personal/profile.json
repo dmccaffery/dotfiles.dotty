@@ -1,0 +1,41 @@
+{
+	"profile": "personal",
+	"description": "created by dotty init",
+	"created_at": "2026-07-15T09:37:34.077003Z",
+	"reposDir": "~/Repos",
+	"repo": "dmccaffery/dotfiles.dotty",
+	"addons": [
+		"nvim",
+		"btop",
+		"k9s",
+		"lazygit",
+		"lsd",
+		"tmux",
+		"yazi"
+	],
+	"agents": [
+		"claude-code",
+		"codex",
+		"grok"
+	],
+	"securityKeys": true,
+	"harden": true,
+	"marketplace": true,
+	"macosDefaults": [
+		"keyboard",
+		"menu-bar",
+		"trackpad",
+		"finder",
+		"screenshots",
+		"software-update",
+		"spaces",
+		"dock",
+		"animations",
+		"gpg-keychain"
+	],
+	"piv": true,
+	"allowedSerials": [
+		"17741369"
+	],
+	"worktrees": ".worktrees"
+}

@@ -1,0 +1,52 @@
+brew "bat"
+brew "curl"
+brew "fd"
+brew "fzf"
+brew "gh"
+brew "git"
+brew "git-delta"
+brew "git-lfs"
+brew "jq"
+brew "ripgrep"
+brew "vivid"
+brew "wget"
+brew "yq"
+brew "zinit"
+brew "zoxide"
+brew "zsh"
+
+brew "jandedobbeleer/oh-my-posh/oh-my-posh", args: ["formula"], trusted: true
+
+cask "font-iosevka-nerd-font"
+cask "font-symbols-only-nerd-font"
+cask "ghostty"
+cask "git-credential-manager"
+
+brew "lazygit"
+brew "neovim"
+
+brew "btop"
+
+brew "derailed/k9s/k9s", trusted: true
+
+
+brew "lsd"
+
+brew "tmux"
+
+brew "chafa"
+brew "ffmpeg"
+brew "poppler"
+brew "resvg"
+brew "yazi"
+
+cask "claude-code@latest"
+
+cask "codex"
+
+cask "grok-build"
+
+brew "pinentry-mac"
+brew "ykman"
+
+cask "yubico-authenticator"

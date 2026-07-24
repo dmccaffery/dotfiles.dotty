@@ -1,0 +1,10 @@
+# Signing config for profile personal, rendered by `dotty init` and
+# included by the shared git config through the active-profile symlink.
+
+[gpg]
+	format = ssh
+
+[gpg "ssh"]
+	allowedSignersFile = ~/.ssh/allowed_signers
+	defaultKeyCommand = "dotty signing-key get --format=key"
+	program = dotty
