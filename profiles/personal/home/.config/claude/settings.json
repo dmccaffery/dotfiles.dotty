@@ -93,7 +93,6 @@
     ],
     "defaultMode": "auto"
   },
-  "model": "claude-fable-5[1m]",
   "hooks": {
     "WorktreeCreate": [
       {
@@ -174,10 +173,6 @@
     "command": "oh-my-posh claude --config ~/.config/oh-my-posh/claude.yaml"
   },
   "enabledPlugins": {
-    "terraform@bitwise": true,
-    "actions@bitwise": false,
-    "golang@bitwise": false,
-    "python@bitwise": false,
     "workflow@bitwise": true
   },
   "extraKnownMarketplaces": {
@@ -185,8 +180,7 @@
       "source": {
         "source": "git",
         "url": "https://github.com/bitwise-media-group/skills.git"
-      },
-      "autoUpdate": true
+      }
     }
   },
   "sandbox": {
@@ -212,6 +206,7 @@
         "sum.golang.org",
         "index.golang.org",
         "vuln.go.dev",
+        "mise.jdx.dev",
         "registry.terraform.io",
         "localhost",
         "127.0.0.1",
@@ -257,12 +252,17 @@
         "~/Repos",
         "~/.cache",
         "~/.local/share/go",
+        "~/.local/share/mise",
         "~/.local/bin",
         "/tmp",
         "~/.npm",
         "~/.config/helm",
         "~/.kubescape",
-        "~/.sigstore"
+        "~/.sigstore",
+        "~/Library/Caches",
+        "~/Library/Developer/Xcode/DerivedData",
+        "~/Library/Developer/CoreSimulator",
+        "~/Library/Developer/Xcode/UserData"
       ],
       "denyWrite": [
         "~/.aws",
@@ -289,20 +289,24 @@
         "~/.local/share",
         "~/.npm",
         "/opt/homebrew",
-        "/tmp"
+        "/tmp",
+        "~/Library/Caches",
+        "~/Library/Developer/Xcode/DerivedData",
+        "~/Library/Developer/CoreSimulator",
+        "~/Library/Developer/Xcode/UserData"
       ]
     },
     "enableWeakerNestedSandbox": false,
     "enableWeakerNetworkIsolation": false
   },
   "feedbackSurveyRate": 0,
-  "effortLevel": "high",
+  "effortLevel": "xhigh",
   "autoUpdatesChannel": "stable",
   "plansDirectory": "./.claude/plans",
   "tui": "fullscreen",
   "autoMemoryEnabled": true,
   "theme": "custom:cyberdream",
   "editorMode": "vim",
-  "agentPushNotifEnabled": true,
-  "remoteControlAtStartup": true
+  "remoteControlAtStartup": false,
+  "agentPushNotifEnabled": true
 }

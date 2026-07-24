@@ -29,6 +29,8 @@ sandbox_mode = "workspace-write"
 approvals_reviewer = "auto_review"
 model = "gpt-5.6-sol"
 model_reasoning_effort = "high"
+notify = ["/Users/deavon/.config/codex/computer-use/Codex Computer Use.app/Contents/SharedSupport/SkyComputerUseClient.app/Contents/MacOS/SkyComputerUseClient", "turn-ended"]
+
 [sandbox_workspace_write]
 # Mirror of sandbox.filesystem.allowWrite. cwd is always writable, so working
 # inside ~/Repos/<repo> needs no entry here; these cover writes that land
@@ -37,6 +39,7 @@ writable_roots = [
   "/Users/deavon/Repos",
   "~/.cache",
   "~/.local/share/go",
+  "~/.local/share/mise",
   "~/.npm",
 ]
 # Claude Code allow-lists ~20 network hosts (npm, pypi, github, …). Codex's
@@ -55,6 +58,9 @@ exclude_tmpdir_env_var = false
 # same ANSI colors too, so the whole TUI stays on-palette without a fork.
 [tui]
 theme = "ansi"
+
+[tui.model_availability_nux]
+"gpt-5.6-sol" = 4
 
 # ── Status hooks: the tmux "needs you" indicator ─────────────────────────────
 # Reuse the shared, tool-agnostic `dotty tmux set-status` (also driven by
@@ -119,8 +125,68 @@ trusted_hash = "sha256:2fa0927c78af723953e64693a5d653e01424a89985051daf04bce1490
 [hooks.state."/Users/deavon/.config/codex/config.toml:stop:0:0"]
 trusted_hash = "sha256:b379694d5ac4b6f42b21cb00d0de6a4cbe84a08fcc21e4e23bbb7784b6702eb2"
 
-[projects."/Users/deavon/Repos/bitwise-media-group/dotty"]
+[desktop]
+followUpQueueMode = "queue"
+
+[marketplaces.openai-bundled]
+last_updated = "2026-07-23T13:58:49Z"
+source_type = "local"
+source = "/Users/deavon/.config/codex/.tmp/bundled-marketplaces/openai-bundled"
+
+[plugins."sites@openai-bundled"]
+enabled = true
+
+[plugins."visualize@openai-bundled"]
+enabled = true
+
+[plugins."browser@openai-bundled"]
+enabled = true
+
+[projects."/Users/deavon/Repos/bitwise-media-group/patchy"]
 trust_level = "trusted"
 
 [projects."/Users/deavon/Repos/dmccaffery/dotfiles.dotty"]
 trust_level = "trusted"
+
+[projects."/Users/deavon/Repos/bitwise-media-group/patchy-flux/flux-containers"]
+trust_level = "trusted"
+
+[projects."/Users/deavon/Repos/bitwise-media-group/flux-containers"]
+trust_level = "trusted"
+
+[projects."/Users/deavon/Repos/bitwise-media-group/terraform-aws-eks-flux"]
+trust_level = "trusted"
+
+[features]
+js_repl = false
+
+[mcp_servers.node_repl]
+args = []
+command = "/Applications/ChatGPT.app/Contents/Resources/cua_node/bin/node_repl"
+startup_timeout_sec = 120
+
+[mcp_servers.node_repl.env]
+NODE_REPL_NATIVE_PIPE_CONNECT_TIMEOUT_MS = "1000"
+NODE_REPL_NODE_MODULE_DIRS = "/Applications/ChatGPT.app/Contents/Resources/cua_node/lib/node_modules"
+NODE_REPL_NODE_PATH = "/Applications/ChatGPT.app/Contents/Resources/cua_node/bin/node"
+NODE_REPL_TRUSTED_CODE_PATHS = "/Users/deavon/.config/codex"
+CODEX_HOME = "/Users/deavon/.config/codex"
+NODE_REPL_TRUSTED_BROWSER_CLIENT_SHA256S = "6d25aa7656feac858f3a3bdaea5bcbab0dbfd426c9de8e6931ce90c399ee8e4f,d0b55a8f9e8e7e9c88421416ea4ce9542c302abf43aa7fc871be4553ea70dd26"
+BROWSER_USE_AVAILABLE_BACKENDS = "chrome,iab"
+NODE_REPL_INSTRUCTIONS_USE_CASE_BROWSER = "Control the in-app browser in conjunction with the Browser Plugin."
+NODE_REPL_INSTRUCTIONS_USE_CASE_CHROME = "Control the Chrome browser in conjunction with the Chrome Plugin. Prefer this method of controlling Chrome over alternatives (such as Computer Use) unless the user explicitly mentions an alternative."
+NODE_REPL_INSTRUCTIONS_USE_CASE_COMPUTER_USE = "Control desktop apps on macOS through Computer Use."
+BROWSER_USE_CODEX_APP_BUILD_FLAVOR = "prod"
+BROWSER_USE_CODEX_APP_VERSION = "26.715.72359"
+CODEX_CLI_PATH = "/Applications/ChatGPT.app/Contents/Resources/codex"
+
+[mcp_servers.computer-use]
+command = "./Codex Computer Use.app/Contents/SharedSupport/SkyComputerUseClient.app/Contents/MacOS/SkyComputerUseClient"
+args = ["mcp"]
+cwd = "."
+enabled = false
+
+[shell_environment_policy.set]
+BROWSER_USE_AVAILABLE_BACKENDS = "chrome,iab"
+NODE_REPL_TRUSTED_BROWSER_CLIENT_SHA256S = "6d25aa7656feac858f3a3bdaea5bcbab0dbfd426c9de8e6931ce90c399ee8e4f,d0b55a8f9e8e7e9c88421416ea4ce9542c302abf43aa7fc871be4553ea70dd26"
+NODE_REPL_TRUSTED_CODE_PATHS = "/Users/deavon/.config/codex"

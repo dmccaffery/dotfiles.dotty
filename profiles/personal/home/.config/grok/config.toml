@@ -37,6 +37,7 @@ simple_mode = false
 vim_mode = true
 screen_mode = "fullscreen"
 compact_mode = false
+permission_mode = "auto"
 yolo = false
 max_thoughts_width = 120
 remember_tool_approvals = false
@@ -45,8 +46,8 @@ group_tool_verbs = true
 fork_secondary_model = "grok-4.5"
 
 [hints]
-new_session_worktree_mode = "always"
-fork_worktree_mode = "always"
+new_session_worktree_mode = "never"
+fork_worktree_mode = "ask"
 
 # ── Tools ────────────────────────────────────────────────────────────────────
 [tools]
@@ -63,11 +64,13 @@ save_on_end = true
 [features]
 feedback = false
 telemetry = false
+
 # ── Sandbox (see sandbox.toml profile "dotfiles") ────────────────────────────
 # Default every new session to the custom profile that mirrors Claude Code's
 # filesystem allowWrite / denyRead. Override per-invocation with --sandbox.
 [sandbox]
 profile = "dotfiles"
+
 # ── Permissions (Claude: permissions.allow / .deny, defaultMode auto) ────────
 # Grok has no "auto" mode; default prompt policy + explicit allow rules is the
 # closest match to Claude's allowlist with autoAllowBashIfSandboxed = false.
@@ -143,6 +146,17 @@ allow = [
   "Bash(git switch *)",
   "Bash(git commit *)",
   "Bash(chmod +x commit.sh)",
+  "Bash(swift *)",
+  "Bash(swiftc *)",
+  "Bash(swift test*)",
+  "Bash(swift build*)",
+  "Bash(swift package *)",
+  "Bash(xcodebuild *)",
+  "Bash(xcrun *)",
+  "Bash(simctl *)",
+  "Bash(mise *)",
+  "Bash(mise exec *)",
+  "Bash(mise run *)",
 ]
 deny = [
   "Read(**/.aws)",
@@ -171,6 +185,7 @@ deny = [
   # com.apple.SecurityServer mach lookup); Grok cannot, so deny the CLI here.
   "Bash(security *)",
 ]
+
 # ── Marketplace + plugins (Claude: extraKnownMarketplaces + enabledPlugins) ──
 [marketplace]
 official_marketplace_auto_installed = false
