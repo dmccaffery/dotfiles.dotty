@@ -1,3 +1,5 @@
+tap "bitwise-media-group/tap", trusted: true
+
 brew "bat"
 brew "curl"
 brew "fd"
@@ -17,6 +19,7 @@ brew "zsh"
 
 brew "jandedobbeleer/oh-my-posh/oh-my-posh", args: ["formula"], trusted: true
 
+cask "bitwise-media-group/tap/dotty", trusted: true
 cask "font-iosevka-nerd-font"
 cask "font-symbols-only-nerd-font"
 cask "ghostty"
@@ -48,5 +51,47 @@ cask "grok-build"
 
 brew "pinentry-mac"
 brew "ykman"
+brew "openssh"
 
 cask "yubico-authenticator"
+
+# Polyglot runtime manager (asdf rust clone)
+brew "mise"
+# Convert your caps lock key or any of your modifier keys to the hyper key
+cask "hyperkey"
+# Anthropic's official Claude AI desktop app
+cask "claude"
+# Move and resize windows using keyboard shortcuts or snap areas
+cask "rectangle"
+# OpenAI's official ChatGPT desktop app
+cask "chatgpt"
+# Set of tools to manage resources and applications hosted on Google Cloud
+cask "gcloud-cli"
+# Kubernetes command-line interface
+brew "kubectl"
+# Pack, ship and run any application as a lightweight container
+brew "docker"
+# Docker CLI plugin for extended build capabilities with BuildKit
+brew "docker-buildx"
+# Isolated development environments using Docker
+brew "docker-compose"
+# Open source programming language to build simple/reliable/efficient software
+brew "go"
+# Client for the Google Drive storage service
+cask "google-drive"
+# Flux Operator CLI
+brew "controlplaneio-fluxcd/tap/flux-operator", trusted: true
+# .NET Core
+brew "dotnet"
+# Semantic code analysis engine
+cask "codeql"
+# CLI tool for analyzing Claude Code usage from local JSONL files
+brew "ccusage"
+# Menu bar usage monitor for Codex and Claude
+cask "codexbar"
+# High-performance system programming language
+brew "swift"
+# Container runtimes on MacOS (and Linux) with minimal setup
+brew "colima"
+# Local-only Rust TUI for AI coding tool token and cost usage
+brew "russmckendrick/tap/tokenuse", trusted: true

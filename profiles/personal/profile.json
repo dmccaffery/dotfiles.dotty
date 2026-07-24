@@ -18,6 +18,7 @@
 		"codex",
 		"grok"
 	],
+	"dumpBrews": false,
 	"securityKeys": true,
 	"harden": true,
 	"marketplace": true,
@@ -33,6 +34,7 @@
 		"animations",
 		"gpg-keychain"
 	],
+	"wallpaper": "",
 	"piv": true,
 	"allowedSerials": [
 		"17741369"
