@@ -7,6 +7,9 @@
 local g = vim.g
 local o = vim.opt
 
+-- add mise shims to path
+vim.env.PATH = vim.env.HOME .. "/.local/share/mise/shims:" .. vim.env.PATH
+
 -- optimise startup
 vim.loader.enable()
 g.loaded_python3_provider = 0
