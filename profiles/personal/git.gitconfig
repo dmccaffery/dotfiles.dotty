@@ -8,3 +8,6 @@
 	allowedSignersFile = ~/.ssh/allowed_signers
 	defaultKeyCommand = "dotty signing-key get --format=key"
 	program = dotty
+
+[includeIf "hasconfig:remote.*.url:https://github.com/bitwise-media-group/**"]
+	path = ~/.config/dotty/active-profile/bitwise.gitconfig

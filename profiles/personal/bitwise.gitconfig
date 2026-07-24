@@ -1,0 +1,3 @@
+[dotty "propose"]
+	auto-merge = "comment"
+	copy = true
