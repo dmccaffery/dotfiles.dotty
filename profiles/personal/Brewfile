@@ -95,3 +95,9 @@ brew "swift"
 brew "colima"
 # Local-only Rust TUI for AI coding tool token and cost usage
 brew "russmckendrick/tap/tokenuse", trusted: true
+# Desktop app for local AI coding tool token and cost usage
+cask "russmckendrick/tap/tokenuse-desktop", trusted: true
+# Triage and remediate security findings from the terminal, over your own kubeconfig
+cask "bitwise-media-group/tap/patchy", trusted: true
+# Flux CLI
+brew "fluxcd/tap/flux", trusted: true
