@@ -93,6 +93,7 @@
     ],
     "defaultMode": "auto"
   },
+  "model": "claude-fable-5[1m]",
   "hooks": {
     "WorktreeCreate": [
       {
@@ -300,7 +301,7 @@
     "enableWeakerNetworkIsolation": false
   },
   "feedbackSurveyRate": 0,
-  "effortLevel": "xhigh",
+  "effortLevel": "high",
   "autoUpdatesChannel": "stable",
   "plansDirectory": "./.claude/plans",
   "tui": "fullscreen",
