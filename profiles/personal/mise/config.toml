@@ -26,7 +26,6 @@ python = "3.15"
 "github:bitwise-media-group/patchy" = { version = "latest", matching = "patchy-cli" }
 "github:bitwise-media-group/evolve" = "latest"
 "aqua:hashicorp/terraform" = "latest"
-"npm:actions-up" = "latest"
 "github:yt-dlp/yt-dlp" = "latest"
 "aqua:google-antigravity/antigravity-cli" = "latest"
 

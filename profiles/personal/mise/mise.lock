@@ -1632,6 +1632,7 @@ checksum = "sha256:33c37be234ba8bee041961047b19160f4d7d0f164e8e246f78bdd10feff14
 url = "https://nodejs.org/dist/v24.22.1/node-v24.22.1-linux-arm64.tar.gz"
 
 [tools.node."platforms.linux-arm64-musl"]
+checksum = "sha256:8254125825a3e5e834bd8a260dab4c8303f720464a741506ec27989b9ba1769b"
 url = "https://unofficial-builds.nodejs.org/download/release/v24.22.1/node-v24.22.1-linux-arm64-musl.tar.gz"
 
 [tools.node."platforms.linux-x64"]
@@ -1639,6 +1640,7 @@ checksum = "sha256:eb6728e77c576a35162c122c45ccadf224d89ff00abc8dae46cc2897c6002
 url = "https://nodejs.org/dist/v24.22.1/node-v24.22.1-linux-x64.tar.gz"
 
 [tools.node."platforms.linux-x64-musl"]
+checksum = "sha256:0a9eddce2d2e8f3addbe94fa46d751325b2d74f7fd1ce63296164d36b6dfc6e5"
 url = "https://unofficial-builds.nodejs.org/download/release/v24.22.1/node-v24.22.1-linux-x64-musl.tar.gz"
 
 [tools.node."platforms.macos-arm64"]
@@ -1652,18 +1654,6 @@ url = "https://nodejs.org/dist/v24.22.1/node-v24.22.1-darwin-x64.tar.gz"
 [tools.node."platforms.windows-x64"]
 checksum = "sha256:d2046d28c2c3dcd211ac5145c0bf30e2047ef9dfb306693c8c6e2eccd8b95fa5"
 url = "https://nodejs.org/dist/v24.22.1/node-v24.22.1-win-x64.zip"
-
-[[tools."npm:@gitlawb/openclaude"]]
-version = "0.32.0"
-aube = { path = "locks/npm-gitlawb-openclaude/0.32.0", digest = "sha256:e0ded7cb0f53ec0dca32cf8e9906a37ceb5354f61834f0069b34f2cfbc07c522" }
-backend = "npm:@gitlawb/openclaude"
-specifiers = ["latest"]
-
-[[tools."npm:actions-up"]]
-version = "1.21.0"
-aube = { path = "locks/npm-actions-up/1.21.0", digest = "sha256:e2076fec05607492ea9894c5910264c5c1e6185cf0d070be68ce1a9ba5b9c84f" }
-backend = "npm:actions-up"
-specifiers = ["latest"]
 
 [[tools.python]]
 version = "3.15.0"
