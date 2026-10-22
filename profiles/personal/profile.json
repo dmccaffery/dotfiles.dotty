@@ -1,43 +1,33 @@
 {
-	"profile": "personal",
-	"description": "created by dotty init",
-	"created_at": "2026-07-15T09:37:34.077003Z",
-	"reposDir": "~/Repos",
-	"repo": "dmccaffery/dotfiles.dotty",
-	"addons": [
-		"nvim",
-		"btop",
-		"k9s",
-		"lazygit",
-		"lsd",
-		"tmux",
-		"yazi"
-	],
-	"agents": [
-		"claude-code",
-		"codex",
-		"grok"
-	],
-	"dumpBrews": false,
-	"securityKeys": true,
-	"harden": true,
-	"marketplace": true,
-	"macosDefaults": [
-		"keyboard",
-		"menu-bar",
-		"trackpad",
-		"finder",
-		"screenshots",
-		"software-update",
-		"spaces",
-		"dock",
-		"animations",
-		"gpg-keychain"
-	],
-	"wallpaper": "",
-	"piv": true,
-	"allowedSerials": [
-		"17741369"
-	],
-	"worktrees": ".worktrees"
+  "profile": "personal",
+  "description": "created by dotty init",
+  "created_at": "2026-07-15T09:37:34.077003Z",
+  "reposDir": "~/Repos",
+  "repo": "dmccaffery/dotfiles.dotty",
+  "addons": ["nvim", "btop", "kubernetes", "lazygit", "lsd", "tmux", "yazi"],
+  "agents": ["claude-code", "codex", "grok"],
+  "importPackages": false,
+  "securityKeys": true,
+  "harden": true,
+  "marketplace": true,
+  "macosDefaults": [
+    "keyboard",
+    "input-sources",
+    "menu-bar",
+    "trackpad",
+    "mouse",
+    "finder",
+    "screenshots",
+    "software-update",
+    "spaces",
+    "dock",
+    "animations",
+    "gpg-keychain",
+    "default-terminal"
+  ],
+  "dockApps": ["ghostty", "claude-code", "codex"],
+  "piv": false,
+  "allowedSerials": ["17741369", "23899167"],
+  "worktrees": ".worktrees",
+  "privateRepo": "dmccaffery/dotfiles.dotty.private"
 }

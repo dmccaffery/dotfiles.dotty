@@ -1,0 +1,36 @@
+# Rendered by dotty init for the component named in the file name; the next
+# init re-renders it and deselecting the component removes it. Add your own
+# packages to ../config.toml instead.
+[tools]
+"aqua:mas-cli/mas" = { version = "latest", os = "macos" }
+"aqua:sharkdp/bat" = "latest"
+"aqua:sharkdp/fd" = "latest"
+"aqua:junegunn/fzf" = "latest"
+"aqua:cli/cli" = "latest"
+"aqua:dandavison/delta" = "latest"
+"aqua:git-lfs/git-lfs" = "latest"
+"aqua:jqlang/jq" = "latest"
+"aqua:BurntSushi/ripgrep" = "latest"
+"aqua:sharkdp/vivid" = "latest"
+"aqua:mikefarah/yq" = "latest"
+"aqua:ajeetdsouza/zoxide" = "latest"
+"aqua:JanDeDobbeleer/oh-my-posh" = "latest"
+"aqua:astral-sh/uv" = "latest"
+"aqua:jdx/fnox" = "latest"
+"aqua:FiloSottile/age" = "latest"
+
+[bootstrap.packages]
+"brew:git" = "latest"
+"brew:curl" = "latest"
+"brew:wget" = "latest"
+"brew:zsh" = "latest"
+"brew:zinit" = "latest"
+
+"brew-cask:font-iosevka-nerd-font" = "latest"
+"brew-cask:font-symbols-only-nerd-font" = "latest"
+"brew-cask:ghostty" = { version = "latest", os = "macos" }
+
+# The brewed zsh is the login shell; mise adds it to /etc/shells and runs chsh.
+# The Homebrew prefix is the one for the OS and architecture init ran on.
+[bootstrap.user]
+login_shell = "/opt/homebrew/bin/zsh"

@@ -1,0 +1,106 @@
+[settings]
+lockfile = true
+locked = false
+minimum_release_age = "1d"
+npm.package_manager = "auto"
+
+[settings.self_update]
+auto = true
+
+[settings.upgrade]
+prune_after = "3d"
+auto_prune = true
+
+[settings.github]
+credential_command = "gh auth token"
+
+[settings.dotfiles]
+# dotty: capture new dotfiles in the repository
+root = "~/Repos/dmccaffery/dotfiles.dotty/home"
+
+[tools]
+node = "lts"
+go = "latest"
+python = "3.15"
+"aqua:anchore/quill" = "latest"
+"github:bitwise-media-group/patchy" = { version = "latest", matching = "patchy-cli" }
+"github:bitwise-media-group/evolve" = "latest"
+"aqua:hashicorp/terraform" = "latest"
+"npm:actions-up" = "latest"
+"github:yt-dlp/yt-dlp" = "latest"
+"aqua:google-antigravity/antigravity-cli" = "latest"
+
+[bootstrap.brew]
+adopt = true
+
+[bootstrap.packages]
+"brew:awscli" = "latest"
+"brew-cask:hyperkey" = { version = "latest", os = "macos" }
+"brew-cask:rectangle" = { version = "latest", os = "macos" }
+"brew-cask:gcloud-cli" = { version = "latest", os = "macos" }
+"brew-cask:codexbar" = { version = "latest", os = "macos" }
+"brew-cask:google-drive" = { version = "latest", os = "macos" }
+"brew-cask:tailscale-app" = { version = "latest", os = "macos" }
+"brew-cask:unifi-identity-endpoint" = { version = "latest", os = "macos" }
+"brew-cask:dropbox" = "latest"
+
+# ipcams
+"mas:1045600272" = "latest"
+# final cut pro
+"mas:1631624924" = "latest"
+# pixelmator pro
+"mas:6746662575" = "latest"
+# motion
+"mas:6746637149" = "latest"
+# compressor
+"mas:6746516157" = "latest"
+# logic pro
+"mas:1615087040" = "latest"
+
+# keynote
+"mas:361285480" = "latest"
+# pages
+"mas:361309726" = "latest"
+# numbers
+"mas:361304891" = "latest"
+
+[dotfiles]
+# dotty: registered home tree
+"~/.config/btop" = { source = "~/Repos/dmccaffery/dotfiles.dotty/home/.config/btop", mode = "symlink" }
+"~/.config/claude/CLAUDE.md" = { source = "~/Repos/dmccaffery/dotfiles.dotty/home/.config/claude/CLAUDE.md", mode = "symlink" }
+# dotty: registered home tree
+"~/.config/claude/settings.json" = { source = "~/.config/dotty/active-profile/home/.config/claude/settings.json", mode = "symlink" }
+"~/.config/claude/themes" = { source = "~/Repos/dmccaffery/dotfiles.dotty/home/.config/claude/themes", mode = "symlink" }
+"~/.config/codex/AGENTS.md" = { source = "~/Repos/dmccaffery/dotfiles.dotty/home/.config/codex/AGENTS.md", mode = "symlink" }
+# dotty: registered home tree
+"~/.config/codex/dotty.config.toml" = { source = "~/.config/dotty/active-profile/home/.config/codex/dotty.config.toml", mode = "symlink" }
+"~/.config/codex/hooks" = { source = "~/Repos/dmccaffery/dotfiles.dotty/home/.config/codex/hooks", mode = "symlink" }
+"~/.config/codex/rules" = { source = "~/Repos/dmccaffery/dotfiles.dotty/home/.config/codex/rules", mode = "symlink" }
+"~/.config/ghostty" = { source = "~/Repos/dmccaffery/dotfiles.dotty/home/.config/ghostty", mode = "symlink" }
+"~/.config/git" = { source = "~/Repos/dmccaffery/dotfiles.dotty/home/.config/git", mode = "symlink" }
+"~/.config/grok/AGENTS.md" = { source = "~/Repos/dmccaffery/dotfiles.dotty/home/.config/grok/AGENTS.md", mode = "copy" }
+# dotty: registered home tree
+"~/.config/grok/config.toml" = { source = "~/.config/dotty/active-profile/home/.config/grok/config.toml", mode = "copy" }
+"~/.config/grok/hooks" = { source = "~/Repos/dmccaffery/dotfiles.dotty/home/.config/grok/hooks", mode = "copy" }
+# dotty: registered home tree
+"~/.config/grok/sandbox.toml" = { source = "~/.config/dotty/active-profile/home/.config/grok/sandbox.toml", mode = "copy" }
+"~/.config/k9s" = { source = "~/Repos/dmccaffery/dotfiles.dotty/home/.config/k9s", mode = "symlink" }
+"~/.config/lazygit" = { source = "~/Repos/dmccaffery/dotfiles.dotty/home/.config/lazygit", mode = "symlink" }
+"~/.config/lsd" = { source = "~/Repos/dmccaffery/dotfiles.dotty/home/.config/lsd", mode = "symlink" }
+"~/.config/nvim" = { source = "~/Repos/dmccaffery/dotfiles.dotty/home/.config/nvim", mode = "symlink" }
+"~/.config/oh-my-posh" = { source = "~/Repos/dmccaffery/dotfiles.dotty/home/.config/oh-my-posh", mode = "symlink" }
+# dotty: registered home tree
+"~/.config/openclaude/settings.json" = { source = "~/.config/dotty/active-profile/home/.config/openclaude/settings.json", mode = "symlink" }
+"~/.config/tmux" = { source = "~/Repos/dmccaffery/dotfiles.dotty/home/.config/tmux", mode = "symlink" }
+"~/.config/vivid" = { source = "~/Repos/dmccaffery/dotfiles.dotty/home/.config/vivid", mode = "symlink" }
+"~/.config/yazi" = { source = "~/Repos/dmccaffery/dotfiles.dotty/home/.config/yazi", mode = "symlink" }
+"~/.config/zsh/.zprofile" = { source = "~/Repos/dmccaffery/dotfiles.dotty/home/.config/zsh/.zprofile", mode = "symlink" }
+"~/.config/zsh/.zshenv" = { source = "~/Repos/dmccaffery/dotfiles.dotty/home/.config/zsh/.zshenv", mode = "symlink" }
+"~/.config/zsh/.zshrc" = { source = "~/Repos/dmccaffery/dotfiles.dotty/home/.config/zsh/.zshrc", mode = "symlink" }
+# dotty: registered home tree
+"~/.hushlogin" = { source = "~/.config/dotty/active-profile/home/.hushlogin", mode = "symlink" }
+"~/.ssh/config" = { source = "~/Repos/dmccaffery/dotfiles.dotty/home/.ssh/config", mode = "symlink" }
+"~/.terminfo" = { source = "~/Repos/dmccaffery/dotfiles.dotty/home/.terminfo", mode = "symlink" }
+"~/.zshenv" = { source = "~/Repos/dmccaffery/dotfiles.dotty/home/.zshenv", mode = "symlink" }
+"~/Repos/dmccaffery/dotfiles.dotty/home" = { mode = "track" }
+"~/Repos/dmccaffery/dotfiles.dotty/profiles/personal/home" = { mode = "track" }
