@@ -37,11 +37,12 @@ prefix_rule(pattern = ["jq"], decision = "allow")
 prefix_rule(pattern = ["yq"], decision = "allow")
 prefix_rule(pattern = ["test"], decision = "allow")
 
-# ── Homebrew (read-only queries) ─────────────────────────────────────────────
-prefix_rule(pattern = ["brew", "list"], decision = "allow")
-prefix_rule(pattern = ["brew", "search"], decision = "allow")
-prefix_rule(pattern = ["brew", "info"], decision = "allow")
-prefix_rule(pattern = ["brew", "bundle", "check"], decision = "allow")
+# ── mise (read-only queries) ─────────────────────────────────────────────────
+prefix_rule(pattern = ["mise", "ls"], decision = "allow")
+prefix_rule(pattern = ["mise", "registry"], decision = "allow")
+prefix_rule(pattern = ["mise", "outdated"], decision = "allow")
+prefix_rule(pattern = ["mise", "config", "ls"], decision = "allow")
+prefix_rule(pattern = ["mise", "bootstrap", "packages", "status"], decision = "allow")
 
 # ── Git: read-only history/state ─────────────────────────────────────────────
 prefix_rule(pattern = ["git", "status"], decision = "allow")
@@ -73,6 +74,11 @@ prefix_rule(pattern = ["chmod", "+x", "commit.sh"], decision = "allow")
 # Credential-path reads are blocked separately by hooks/pre-tool-use-policy
 # (a prefix rule can't catch a secret passed as a later argument).
 prefix_rule(pattern = ["security"], decision = "forbidden")
+# fnox brokers every secret; an agent must never read or export them.
+prefix_rule(pattern = ["fnox"], decision = "forbidden")
 prefix_rule(pattern=["codex", "--help"], decision="allow")
 prefix_rule(pattern=["codex", "doctor", "--help"], decision="allow")
 prefix_rule(pattern=["codex", "exec", "--help"], decision="allow")
+prefix_rule(pattern=["ps", "-axo", "pid,ppid,etime,command"], decision="allow")
+prefix_rule(pattern=["go", "test"], decision="allow")
+prefix_rule(pattern=["go", "vet"], decision="allow")

@@ -64,13 +64,11 @@ save_on_end = true
 [features]
 feedback = false
 telemetry = false
-
 # ── Sandbox (see sandbox.toml profile "dotfiles") ────────────────────────────
 # Default every new session to the custom profile that mirrors Claude Code's
 # filesystem allowWrite / denyRead. Override per-invocation with --sandbox.
 [sandbox]
 profile = "dotfiles"
-
 # ── Permissions (Claude: permissions.allow / .deny, defaultMode auto) ────────
 # Grok has no "auto" mode; default prompt policy + explicit allow rules is the
 # closest match to Claude's allowlist with autoAllowBashIfSandboxed = false.
@@ -114,12 +112,15 @@ allow = [
   "Bash(find *)",
   "Bash(jq *)",
   "Bash(yq *)",
-  "Bash(brew list)",
-  "Bash(brew list *)",
-  "Bash(brew search *)",
-  "Bash(brew info *)",
-  "Bash(brew bundle check)",
-  "Bash(brew bundle check *)",
+  "Bash(mise ls)",
+  "Bash(mise ls *)",
+  "Bash(mise registry)",
+  "Bash(mise registry *)",
+  "Bash(mise outdated)",
+  "Bash(mise outdated *)",
+  "Bash(mise config ls)",
+  "Bash(mise bootstrap packages status)",
+  "Bash(mise bootstrap packages status *)",
   "Bash(git status)",
   "Bash(git status *)",
   "Bash(git diff)",
@@ -184,8 +185,8 @@ deny = [
   # Claude Code blocks the keychain at the sandbox layer (no
   # com.apple.SecurityServer mach lookup); Grok cannot, so deny the CLI here.
   "Bash(security *)",
+  "Bash(fnox *)",
 ]
-
 # ── Marketplace + plugins (Claude: extraKnownMarketplaces + enabledPlugins) ──
 [marketplace]
 official_marketplace_auto_installed = false
