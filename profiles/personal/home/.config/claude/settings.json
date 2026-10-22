@@ -45,12 +45,15 @@
       "Bash(find *)",
       "Bash(jq *)",
       "Bash(yq *)",
-      "Bash(brew list)",
-      "Bash(brew list *)",
-      "Bash(brew search *)",
-      "Bash(brew info *)",
-      "Bash(brew bundle check)",
-      "Bash(brew bundle check *)",
+      "Bash(mise ls)",
+      "Bash(mise ls *)",
+      "Bash(mise registry)",
+      "Bash(mise registry *)",
+      "Bash(mise outdated)",
+      "Bash(mise outdated *)",
+      "Bash(mise config ls)",
+      "Bash(mise bootstrap packages status)",
+      "Bash(mise bootstrap packages status *)",
       "Bash(git status)",
       "Bash(git status *)",
       "Bash(git diff)",
@@ -75,7 +78,18 @@
       "Bash(git restore *)",
       "Bash(git checkout *)",
       "Bash(git switch *)",
-      "Bash(git commit *)"
+      "Bash(git commit *)",
+      "Bash(swift *)",
+      "Bash(swiftc *)",
+      "Bash(swift test*)",
+      "Bash(swift build*)",
+      "Bash(swift package *)",
+      "Bash(xcodebuild *)",
+      "Bash(xcrun *)",
+      "Bash(simctl *)",
+      "Bash(mise *)",
+      "Bash(mise exec *)",
+      "Bash(mise run *)"
     ],
     "deny": [
       "Read(~/.aws)",
@@ -89,11 +103,13 @@
       "Edit(~/.config/gcloud)",
       "Edit(~/.ssh)",
       "Edit(~/.gnupg)",
-      "Edit(**/.env*)"
+      "Edit(**/.env*)",
+      "Bash(fnox get *)",
+      "Bash(fnox exec *)",
+      "Bash(fnox export *)"
     ],
     "defaultMode": "auto"
   },
-  "model": "claude-fable-5[1m]",
   "hooks": {
     "WorktreeCreate": [
       {
@@ -174,6 +190,10 @@
     "command": "oh-my-posh claude --config ~/.config/oh-my-posh/claude.yaml"
   },
   "enabledPlugins": {
+    "terraform@bitwise": true,
+    "actions@bitwise": false,
+    "golang@bitwise": false,
+    "python@bitwise": false,
     "workflow@bitwise": true
   },
   "extraKnownMarketplaces": {
@@ -181,7 +201,8 @@
       "source": {
         "source": "git",
         "url": "https://github.com/bitwise-media-group/skills.git"
-      }
+      },
+      "autoUpdate": true
     }
   },
   "sandbox": {
@@ -229,8 +250,6 @@
         "*.quay.io",
         "*.pkg.dev",
         "production.cloudflare.docker.com",
-        "*.s3.dualstack.eu-west-1.amazonaws.com",
-        "*.s3.dualstack.eu-west-2.amazonaws.com",
         "public.ecr.aws",
         "*.amazonaws.com"
       ],
@@ -252,18 +271,17 @@
       "allowWrite": [
         "~/Repos",
         "~/.cache",
+        "~/.local/bin",
         "~/.local/share/go",
         "~/.local/share/mise",
-        "~/.local/bin",
+        "~/.local/state",
         "/tmp",
         "~/.npm",
         "~/.config/helm",
         "~/.kubescape",
         "~/.sigstore",
         "~/Library/Caches",
-        "~/Library/Developer/Xcode/DerivedData",
-        "~/Library/Developer/CoreSimulator",
-        "~/Library/Developer/Xcode/UserData"
+        "~/Library/org.swift.swiftpm"
       ],
       "denyWrite": [
         "~/.aws",
@@ -288,13 +306,12 @@
         "~/.local/bin",
         "~/.local/runtime",
         "~/.local/share",
+        "~/.local/state",
         "~/.npm",
         "/opt/homebrew",
         "/tmp",
         "~/Library/Caches",
-        "~/Library/Developer/Xcode/DerivedData",
-        "~/Library/Developer/CoreSimulator",
-        "~/Library/Developer/Xcode/UserData"
+        "~/Library/org.swift.swiftpm"
       ]
     },
     "enableWeakerNestedSandbox": false,
@@ -302,6 +319,12 @@
   },
   "feedbackSurveyRate": 0,
   "effortLevel": "high",
+  "modelSettings": {
+    "claude-opus-5-5": {
+      "effortLevel": "high"
+    }
+  },
+  "showClearContextOnPlanAccept": true,
   "autoUpdatesChannel": "stable",
   "plansDirectory": "./.claude/plans",
   "tui": "fullscreen",
