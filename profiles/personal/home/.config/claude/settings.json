@@ -9,7 +9,7 @@
   "includeGitInstructions": false,
   "permissions": {
     "allow": [
-      "Read(*)",
+      "Read",
       "Glob",
       "Grep",
       "WebSearch",
@@ -194,7 +194,8 @@
     "actions@bitwise": false,
     "golang@bitwise": false,
     "python@bitwise": false,
-    "workflow@bitwise": true
+    "workflow@bitwise": true,
+    "swift-lsp@claude-plugins-official": true
   },
   "extraKnownMarketplaces": {
     "bitwise": {
@@ -321,7 +322,7 @@
   "effortLevel": "high",
   "modelSettings": {
     "claude-opus-5-5": {
-      "effortLevel": "high"
+      "effortLevel": "xhigh"
     }
   },
   "showClearContextOnPlanAccept": true,
@@ -329,6 +330,7 @@
   "plansDirectory": "./.claude/plans",
   "tui": "fullscreen",
   "autoMemoryEnabled": true,
+  "skipWorkflowUsageWarning": true,
   "theme": "custom:cyberdream",
   "editorMode": "vim",
   "remoteControlAtStartup": false,
