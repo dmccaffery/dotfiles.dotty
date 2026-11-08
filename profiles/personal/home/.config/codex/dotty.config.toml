@@ -24,10 +24,14 @@
 #   [[hooks.*]] -> dotty tmux set-status      <- the Claude Code "needs you" tmux indicator
 #   [tui]                                      <- theme: custom:cyberdream (inherited via ANSI)
 #
-# Validate edits with:  codex --profile dotty doctor   (config parse + sandbox summary)
-# Prompt before anything that execpolicy hasn't explicitly trusted — the analog
-# of Claude Code's "ask unless allow-listed" default (autoAllowBashIfSandboxed=false).
-approval_policy = "untrusted"
+# Validate edits by launching:  codex --profile dotty   (config errors print on startup;
+# `codex doctor` no longer accepts --profile)
+# Codex 0.167 removed "untrusted" (prompt for anything execpolicy hasn't
+# trusted); "on-request" is the closest remaining mode. Commands run inside the
+# workspace-write sandbox without a prompt, execpolicy "allow" rules auto-run,
+# and anything needing to escape the sandbox asks — with approvals_reviewer
+# routing those asks through auto-review first.
+approval_policy = "on-request"
 # ── Sandbox ──────────────────────────────────────────────────────────────────
 # workspace-write: read broadly, write only to cwd + writable_roots; everything
 # else needs approval. macOS enforces this with Seatbelt, the same primitive
