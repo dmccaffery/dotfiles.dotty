@@ -1,6 +1,7 @@
 [settings]
 lockfile = true
 locked = false
+# lockfile_platforms = ["linux-x64", "linux-arm64", "macos-arm64"]
 minimum_release_age = "1d"
 npm.package_manager = "auto"
 
@@ -19,7 +20,6 @@ credential_command = "gh auth token"
 root = "~/Repos/dmccaffery/dotfiles.dotty/home"
 
 [tools]
-node = "lts"
 go = "latest"
 python = "3.15"
 "aqua:anchore/quill" = "latest"
@@ -29,6 +29,7 @@ python = "3.15"
 "github:yt-dlp/yt-dlp" = "latest"
 "github:bluenviron/mediamtx" = "latest"
 "aqua:google-antigravity/antigravity-cli" = "latest"
+"aqua:aws/aws-cli" = "latest"
 
 [bootstrap.brew]
 adopt = true
@@ -36,15 +37,14 @@ adopt = true
 [bootstrap.packages]
 # keg-only ffmpeg built with libsrt, so `atem watch` can play SRT directly
 "brew:ffmpeg-full" = { version = "latest", os = "macos" }
-"brew:awscli" = "latest"
-"brew-cask:hyperkey" = { version = "latest", os = "macos" }
-"brew-cask:rectangle" = { version = "latest", os = "macos" }
 "brew-cask:gcloud-cli" = { version = "latest", os = "macos" }
 "brew-cask:codexbar" = { version = "latest", os = "macos" }
 "brew-cask:google-drive" = { version = "latest", os = "macos" }
 "brew-cask:tailscale-app" = { version = "latest", os = "macos" }
 "brew-cask:unifi-identity-endpoint" = { version = "latest", os = "macos" }
-"brew-cask:dropbox" = "latest"
+"brew-cask:dropbox" = { version = "latest", os = "macos" }
+"brew-cask:hyperkey" = { version = "latest", os = "macos" }
+"brew-cask:rectangle" = { version = "latest", os = "macos" }
 
 # ipcams
 "mas:1045600272" = "latest"
@@ -65,6 +65,7 @@ adopt = true
 "mas:361309726" = "latest"
 # numbers
 "mas:361304891" = "latest"
+"mas:425264550" = "latest"
 
 [dotfiles]
 # dotty: registered home tree
