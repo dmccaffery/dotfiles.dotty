@@ -114,3 +114,20 @@ matcher = "^Bash$"
 [[hooks.PreToolUse.hooks]]
 type = "command"
 command = "~/.config/codex/hooks/pre-tool-use-policy"
+
+[hooks.state]
+
+[hooks.state."/Users/deavon/.config/codex/dotty.config.toml:pre_tool_use:0:0"]
+trusted_hash = "sha256:0f915b14527017f78055c3d83636754e9b7f17b42af2d9e8570d5f270232de6c"
+
+[hooks.state."/Users/deavon/.config/codex/dotty.config.toml:permission_request:0:0"]
+trusted_hash = "sha256:64165a5cdb995ec6892749a0c19ead67d83d8f73995491012eb99c0c6829ac17"
+
+[hooks.state."/Users/deavon/.config/codex/dotty.config.toml:post_tool_use:0:0"]
+trusted_hash = "sha256:c2ec6ddaa257331534ea039d4f295bbac25994fa7fc570b7ab6125337f58081b"
+
+[hooks.state."/Users/deavon/.config/codex/dotty.config.toml:user_prompt_submit:0:0"]
+trusted_hash = "sha256:2fa0927c78af723953e64693a5d653e01424a89985051daf04bce1490851c9cc"
+
+[hooks.state."/Users/deavon/.config/codex/dotty.config.toml:stop:0:0"]
+trusted_hash = "sha256:b379694d5ac4b6f42b21cb00d0de6a4cbe84a08fcc21e4e23bbb7784b6702eb2"
