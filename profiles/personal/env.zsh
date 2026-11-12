@@ -6,10 +6,10 @@
 # symlink — activating a different profile swaps these values.
 export REPOS_DIR="${HOME}/Repos"
 
-# Where agent worktrees live: a directory name inside each repository, or an
-# absolute path for one shared root. dotty worktree and the nvim session
-# picker read this.
-export DOTTY_WORKTREES=".worktrees"
+# Where agent worktrees live: an absolute (or ~-prefixed) path for one shared
+# root — the default — or a directory name inside each repository. dotty git
+# worktree and the nvim session picker read this.
+export DOTTY_WORKTREES="/Users/deavon/.local/share/dotty/worktrees"
 export EDITOR=nvim
 
 # Relocate Codex's home under XDG config so its stow package lives at

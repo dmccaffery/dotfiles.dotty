@@ -15,5 +15,6 @@ fnox.local.toml
 
 **/.claude/.cc-writes/
 
-# agent worktrees live inside each repository
+# agent worktrees: the former in-repo default, kept so leftovers from before
+# the move to a shared root stay out of git status
 .worktrees/

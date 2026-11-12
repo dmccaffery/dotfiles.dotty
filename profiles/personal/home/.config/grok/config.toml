@@ -81,7 +81,7 @@ allow = [
   "Grep",
   "WebSearch",
   "Edit(/tmp/**)",
-  "Edit(**/.worktrees/**)",
+  "Edit(/Users/deavon/.local/share/dotty/worktrees/**)",
   "Bash(pwd)",
   "Bash(hostname)",
   "Bash(whoami)",
