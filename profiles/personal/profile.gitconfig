@@ -2,10 +2,6 @@
 # never rewritten afterwards. The shared git config includes it last, so
 # anything set here overrides the defaults, the private overlay, and the
 # rendered security-keys and worktree configs above it.
-[dotty.propose]
-browse = true
-copy = true
-auto-merge = comment
 
 [includeIf "hasconfig:remote.*.url:https://github.com/bitwise-media-group/**"]
 	path = ~/.config/dotty/active-profile/bitwise.gitconfig

@@ -1,0 +1,7 @@
+[submodule]
+recurse = true
+
+[dotty.propose]
+browse = true
+copy = true
+auto-merge = comment
