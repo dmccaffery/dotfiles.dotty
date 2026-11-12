@@ -6,13 +6,15 @@
 # Codex CLI configuration — the OpenAI agent, brought to the same guardrails as
 # Claude Code (.config/claude/settings.json) and OpenCode (.config/opencode/opencode.jsonc).
 #
-# This file is a Codex profile layer, loaded as $CODEX_HOME/dotty.config.toml
-# when codex runs with --profile dotty — the shared .zshrc alias and
-# `dotty tmux new` both pass it. $CODEX_HOME/config.toml is machine-local and
+# Codex reads this file as its system config layer: `dotty init` and
+# `dotty dotfiles link` symlink /etc/codex/config.toml to it (through sudo, the
+# first time), so every codex invocation — interactive, exec, doctor, scripts —
+# picks it up without a flag. $CODEX_HOME/config.toml is machine-local and
 # Codex-owned (hooks.state, project trust, marketplace caches, desktop-app MCP
-# servers); dotty never renders, links, or touches it. The profile layer has
-# higher precedence than config.toml, so stale dotty-rendered keys left in a
-# migrated config.toml are overridden whenever --profile dotty is in effect.
+# servers); dotty never renders, links, or touches it. That file overrides this
+# one key by key: a model picked with /model wins as intended, and dotty warns
+# when it finds approval_policy, sandbox_mode, or [sandbox_workspace_write]
+# there, since those would loosen the hardening below.
 # CODEX_HOME itself is set to ~/.config/codex in the active profile's env.zsh
 # so this whole package lives under XDG config like every other tool in this
 # repo (CLAUDE_CONFIG_DIR relocates Claude Code the same way).
@@ -24,13 +26,14 @@
 #   [[hooks.*]] -> dotty tmux set-status      <- the Claude Code "needs you" tmux indicator
 #   [tui]                                      <- theme: custom:cyberdream (inherited via ANSI)
 #
-# Validate edits by launching:  codex --profile dotty   (config errors print on startup;
-# `codex doctor` no longer accepts --profile)
+# Validate edits with:  codex doctor   (config parse + sandbox summary)
+
 # Codex 0.167 removed "untrusted" (prompt for anything execpolicy hasn't
 # trusted); "on-request" is the closest remaining mode. Commands run inside the
 # workspace-write sandbox without a prompt, execpolicy "allow" rules auto-run,
 # and anything needing to escape the sandbox asks — with approvals_reviewer
-# routing those asks through auto-review first.
+# routing those asks through auto-review first. Without hardening this is the
+# stock behaviour.
 approval_policy = "on-request"
 # ── Sandbox ──────────────────────────────────────────────────────────────────
 # workspace-write: read broadly, write only to cwd + writable_roots; everything
@@ -38,14 +41,13 @@ approval_policy = "on-request"
 # Claude Code's sandbox uses.
 sandbox_mode = "workspace-write"
 approvals_reviewer = "auto_review"
-model = "gpt-5.6-sol"
-model_reasoning_effort = "high"
 [sandbox_workspace_write]
 # Mirror of sandbox.filesystem.allowWrite. cwd is always writable, so working
 # inside ~/Repos/<repo> needs no entry here; these cover writes that land
 # outside the current repo (agent worktrees + language/tool caches).
 writable_roots = [
   "/Users/deavon/Repos",
+  "/Users/deavon/.local/share/dotty/worktrees",
   "~/.cache",
   "~/.local/share/go",
   "~/.local/share/mise",
@@ -114,20 +116,3 @@ matcher = "^Bash$"
 [[hooks.PreToolUse.hooks]]
 type = "command"
 command = "~/.config/codex/hooks/pre-tool-use-policy"
-
-[hooks.state]
-
-[hooks.state."/Users/deavon/.config/codex/dotty.config.toml:pre_tool_use:0:0"]
-trusted_hash = "sha256:0f915b14527017f78055c3d83636754e9b7f17b42af2d9e8570d5f270232de6c"
-
-[hooks.state."/Users/deavon/.config/codex/dotty.config.toml:permission_request:0:0"]
-trusted_hash = "sha256:64165a5cdb995ec6892749a0c19ead67d83d8f73995491012eb99c0c6829ac17"
-
-[hooks.state."/Users/deavon/.config/codex/dotty.config.toml:post_tool_use:0:0"]
-trusted_hash = "sha256:c2ec6ddaa257331534ea039d4f295bbac25994fa7fc570b7ab6125337f58081b"
-
-[hooks.state."/Users/deavon/.config/codex/dotty.config.toml:user_prompt_submit:0:0"]
-trusted_hash = "sha256:2fa0927c78af723953e64693a5d653e01424a89985051daf04bce1490851c9cc"
-
-[hooks.state."/Users/deavon/.config/codex/dotty.config.toml:stop:0:0"]
-trusted_hash = "sha256:b379694d5ac4b6f42b21cb00d0de6a4cbe84a08fcc21e4e23bbb7784b6702eb2"
