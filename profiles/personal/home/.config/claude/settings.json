@@ -14,7 +14,7 @@
       "Grep",
       "WebSearch",
       "Edit(/tmp/**)",
-      "Edit(**/.worktrees/**)",
+      "Edit(/Users/deavon/.local/share/dotty/worktrees/**)",
       "Bash(pwd)",
       "Bash(hostname)",
       "Bash(whoami)",
@@ -98,12 +98,14 @@
       "Read(~/.ssh)",
       "Read(~/.gnupg)",
       "Read(**/.env*)",
+
       "Edit(~/.aws)",
       "Edit(~/.azure)",
       "Edit(~/.config/gcloud)",
       "Edit(~/.ssh)",
       "Edit(~/.gnupg)",
       "Edit(**/.env*)",
+
       "Bash(fnox get *)",
       "Bash(fnox exec *)",
       "Bash(fnox export *)"
@@ -116,7 +118,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "dotty worktree start"
+            "command": "dotty git worktree add"
           }
         ]
       }
@@ -126,7 +128,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "dotty worktree end"
+            "command": "dotty git worktree remove --yes"
           }
         ]
       }
@@ -194,8 +196,7 @@
     "actions@bitwise": false,
     "golang@bitwise": false,
     "python@bitwise": false,
-    "workflow@bitwise": true,
-    "swift-lsp@claude-plugins-official": true
+    "workflow@bitwise": true
   },
   "extraKnownMarketplaces": {
     "bitwise": {
@@ -220,22 +221,31 @@
         "ghcr.io",
         "codeberg.org",
         "code.forgejo.org",
+
         "pypi.org",
         "files.pythonhosted.org",
+
         "formulae.brew.sh",
+
         "nodejs.org",
         "registry.npmjs.org",
+
         "proxy.golang.org",
         "sum.golang.org",
         "index.golang.org",
         "vuln.go.dev",
+
         "mise.jdx.dev",
+
         "registry.terraform.io",
+
         "localhost",
         "127.0.0.1",
         "::1",
+
         "fonts.googleapis.com",
         "fonts.gstatic.com",
+
         "istio-release.storage.googleapis.com",
         "prometheus-community.github.io",
         "registry.istio.io",
@@ -243,6 +253,7 @@
         "grype.anchore.io",
         "toolbox-data.anchore.io",
         "*.sigstore.dev",
+
         "docker.io",
         "registry-1.docker.io",
         "auth.docker.io",
@@ -251,6 +262,9 @@
         "*.quay.io",
         "*.pkg.dev",
         "production.cloudflare.docker.com",
+
+        "*.s3.dualstack.eu-west-1.amazonaws.com",
+        "*.s3.dualstack.eu-west-2.amazonaws.com",
         "public.ecr.aws",
         "*.amazonaws.com"
       ],
@@ -262,6 +276,7 @@
       "allowMachLookup": [
         "com.apple.trustd",
         "com.apple.trustd.agent",
+
         "com.apple.mDNSResponder",
         "com.apple.dnssd",
         "com.apple.system.opendirectoryd.api",
@@ -271,6 +286,7 @@
     "filesystem": {
       "allowWrite": [
         "~/Repos",
+        "/Users/deavon/.local/share/dotty/worktrees",
         "~/.cache",
         "~/.local/bin",
         "~/.local/share/go",
@@ -284,7 +300,7 @@
         "~/Library/Caches",
         "~/Library/org.swift.swiftpm"
       ],
-      "denyWrite": [
+      "denyRead": [
         "~/.aws",
         "~/.azure",
         "~/.config/gcloud",
@@ -292,7 +308,7 @@
         "~/.gnupg",
         "**/.env*"
       ],
-      "denyRead": [
+      "denyWrite": [
         "~/.aws",
         "~/.azure",
         "~/.config/gcloud",
@@ -320,19 +336,13 @@
   },
   "feedbackSurveyRate": 0,
   "effortLevel": "high",
-  "modelSettings": {
-    "claude-opus-5-5": {
-      "effortLevel": "xhigh"
-    }
-  },
-  "showClearContextOnPlanAccept": true,
   "autoUpdatesChannel": "stable",
   "plansDirectory": "./.claude/plans",
   "tui": "fullscreen",
   "autoMemoryEnabled": true,
-  "skipWorkflowUsageWarning": true,
   "theme": "custom:cyberdream",
   "editorMode": "vim",
   "remoteControlAtStartup": false,
-  "agentPushNotifEnabled": true
+  "agentPushNotifEnabled": true,
+  "showClearContextOnPlanAccept": true
 }
