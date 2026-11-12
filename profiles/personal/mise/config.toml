@@ -66,6 +66,8 @@ adopt = true
 # numbers
 "mas:361304891" = "latest"
 "mas:425264550" = "latest"
+"brew-cask:font-aptos" = "latest"
+"brew:openssl@3" = "latest"
 
 [dotfiles]
 # dotty: registered home tree

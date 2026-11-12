@@ -16,9 +16,17 @@
 	"agents": [
 		"claude-code",
 		"codex",
+		"antigravity",
 		"grok"
 	],
 	"importPackages": false,
+	"lockfilePlatforms": [
+		"macos-arm64",
+		"linux-x64",
+		"linux-arm64",
+		"linux-x64-musl",
+		"linux-arm64-musl"
+	],
 	"securityKeys": true,
 	"harden": true,
 	"marketplace": true,
@@ -49,6 +57,6 @@
 		"23899167",
 		"23899191"
 	],
-	"worktrees": ".worktrees",
+	"worktrees": "/Users/deavon/.local/share/dotty/worktrees",
 	"privateRepo": "dmccaffery/dotfiles.dotty.private"
 }

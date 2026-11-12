@@ -7,6 +7,6 @@
 "aqua:abiosoft/colima" = "latest"
 "aqua:lima-vm/lima" = "latest"
 "aqua:docker/cli" = "latest"
+"aqua:docker/buildx" = "latest"
 "aqua:docker/compose" = "latest"
 "aqua:fluxcd/flux2" = "latest"
-"aqua:docker/buildx" = { version = "latest", postinstall = 'dir="${DOCKER_CONFIG:-$HOME/.docker}/cli-plugins" && mkdir -p "$dir" && ln -sf "$MISE_TOOL_INSTALL_PATH/docker-cli-plugin-docker-buildx" "$dir/docker-buildx"' }
